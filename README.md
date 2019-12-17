@@ -1,101 +1,93 @@
 
 ```javascript
+// Keep up the hoop
+function hoopCount (n) {
+   if (n >= 10){return 'Great, now move on to tricks'
+   } return 'Keep at it until you get it'  
+}
 
-// Типы данных. Определение типа данных
-// Convert boolean values to strings 'Yes' or 'No'.
+// Chuck Norris VII - True or False? (Beginner)
+function ifChuckSaysSo(){
+return !true;
+}
 
-function boolToWord( bool ){
-  if (bool == true){
-        return "Yes"
+// Simple Comparison?
+function add(a, b){
+	if (a == b) { 
+  return true
+  } else { 
+  return false };
+}
+// Is he gonna survive?
+function hero(bullets, dragons){
+  if (bullets >= dragons * 2 ){
+  return true
+  } return false;
+}
+
+// Even or Odd
+function even_or_odd(number) {
+  if(number % 2){
+  return 'Odd'
+  }
+  return 'Even'
+}
+
+// Determine offspring sex based on genes XX and XY chromosomes
+function chromosomeCheck(sperm) {
+  if(sperm === 'XY'){
+  return 'Congratulations! You\'re going to have a son.'
+  } 
+  return 'Congratulations! You\'re going to have a daughter.'
+}
+
+// What's the real floor?
+function getRealFloor(n) {
+if (n > 0 && n < 13){
+return n - 1;
+  }else if
+    (n > 13){
+return n - 2
+}
+return n
+}
+
+// Calculate BMI
+function bmi(weight, height) {
+let a = weight / (height * height);
+if (a <= 18.5) return 'Underweight'
+else if (a <= 25.0) return 'Normal'
+else if (a <= 30.0) return 'Overweight'
+else if (a > 30) return 'Obese';
+}
+
+// Alan Partridge II - Apple Turnover
+function apple(x){
+if (x = +x && x * x >= 1000){ 
+return 'It\'s hotter than the sun!!'
+}else{ 
+return 'Help yourself to a honeycomb Yorkie for the glovebox.'
+}
+}
+
+// Simple multiplication
+function simpleMultiplication(number) {
+    if (number % 2){
+    return number * 9
     } else {
-        return "No"}
+    return number * 8
+    }
 }
 
-// Super Duper Easy
-function problem(x){
-let a = x * 50 + 6;
-  if(typeof (x) === 'number') {
-  return a;
-  } else { return 'Error'}
-}
-// Type of sum
-function typeOfSum(a, b) {
-  return typeof (a + b)
-}
+// Calculate Two People's Individual Ages
+function getAges(sum,difference){
+ if (difference < 0||sum < 0) return null;
+   sum = sum / 2
+   difference /= 2
+   if (sum + difference < 0||sum - difference < 0) return null;
+   return [sum + difference, sum - difference]
+};
 
-// Convert a Number to a String!
-function numberToString(num) {
-  return String(num)
-}
-// Number toString
-let a = 123;
-a = a.toString();
-console.log(a)
-
-//Convert a String to a Number!
-let stringToNumber = function(str){
-  if(typeof str === 'string'){
-  return + str
-  } else {
-  return null;
-  }
-}
-
-//Convert a Boolean to a String
-function booleanToString(b){
-  if (Boolean (b) === true) {
-    return 'true'
-  } else{
-    return 'false'
-  }
-}
-
-// Sum The Strings
-function sumStr(a,b) {
-  return String(Number(a) + Number(b))
-}
-
-// Formatting decimal places #0
-function twoDecimalPlaces(n) {
-  return +(n.toFixed(2))
-}
-
-// Area of a Square
-function squareArea(A){
-  return + (Math.pow((4 * A) / (2 * Math.PI), 2)).toFixed(2)
-}
-
-// Keep Hydrated!
-function litres(time) {
-const waterPerHour = 0.5;
-return Math.floor(time * waterPerHour)
-  return 0;
-}
-
-// Count Odd Numbers below n
-function oddCount(n){
-  return Math.floor(n/2)
-}
-
-// Century From Year
-function century(year) {
-  return Math.ceil(year / 100);
-}
-
-// Discover The Original Price
-function discoverOriginalPrice(discountedPrice, salePercentage){
-  return +((discountedPrice*100)/(100-salePercentage)).toFixed(2);
-} 
-
-// How many times should I go?
-function howManyTimes(annualPrice, individualPrice) {
-  return Math.ceil(annualPrice / individualPrice);
-}
-
-// Return the closest number multiple of 10
-const closestMultiple10 = num => {
-  return ((num / 10).toFixed(0)) * 10;
-}
 
 
 ```
