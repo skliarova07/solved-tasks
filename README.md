@@ -1,93 +1,84 @@
 
 ```javascript
-// Keep up the hoop
-function hoopCount (n) {
-   if (n >= 10){return 'Great, now move on to tricks'
-   } return 'Keep at it until you get it'  
-}
+// Sleigh Authentication
+function Sleigh() {}
 
-// Chuck Norris VII - True or False? (Beginner)
-function ifChuckSaysSo(){
-return !true;
-}
-
-// Simple Comparison?
-function add(a, b){
-	if (a == b) { 
+Sleigh.prototype.authenticate = function(name, password) {
+  if (name === 'Santa Claus' && password === 'Ho Ho Ho!'){
   return true
-  } else { 
-  return false };
-}
-// Is he gonna survive?
-function hero(bullets, dragons){
-  if (bullets >= dragons * 2 ){
-  return true
-  } return false;
-}
-
-// Even or Odd
-function even_or_odd(number) {
-  if(number % 2){
-  return 'Odd'
+  } else if (name !== 'Santa Claus' || password !== 'Ho Ho Ho!'){
+  return false
   }
-  return 'Even'
-}
+};
 
-// Determine offspring sex based on genes XX and XY chromosomes
-function chromosomeCheck(sperm) {
-  if(sperm === 'XY'){
-  return 'Congratulations! You\'re going to have a son.'
-  } 
-  return 'Congratulations! You\'re going to have a daughter.'
-}
-
-// What's the real floor?
-function getRealFloor(n) {
-if (n > 0 && n < 13){
-return n - 1;
-  }else if
-    (n > 13){
-return n - 2
-}
-return n
-}
-
-// Calculate BMI
-function bmi(weight, height) {
-let a = weight / (height * height);
-if (a <= 18.5) return 'Underweight'
-else if (a <= 25.0) return 'Normal'
-else if (a <= 30.0) return 'Overweight'
-else if (a > 30) return 'Obese';
-}
-
-// Alan Partridge II - Apple Turnover
-function apple(x){
-if (x = +x && x * x >= 1000){ 
-return 'It\'s hotter than the sun!!'
-}else{ 
-return 'Help yourself to a honeycomb Yorkie for the glovebox.'
+// Is n divisible by x and y?
+function isDivisible(n, x, y) {
+if (n % x === 0 && n % y === 0){
+return true
+} else if (n % x !== 0 || n % y !== 0){
+return false
 }
 }
 
-// Simple multiplication
-function simpleMultiplication(number) {
-    if (number % 2){
-    return number * 9
-    } else {
-    return number * 8
+// Is this a triangle?
+function isTriangle(a,b,c){
+ if (a < b + c && b < a + c && c < a + b){
+  return true
+} else {
+  return false;
+  }
+}
+
+// Rock Paper Scissors!
+const rps = (p1, p2) => {
+if (p1 === p2){
+return ('Draw!');
+}else if (p1 === 'paper' && p2 === 'rock'){
+return ('Player 1 won!');
+}else if (p1 === 'rock' && p2 === 'scissors'){
+return ('Player 1 won!');
+}else if (p1 === 'scissors' && p2 === 'rock'){
+return ('Player 2 won!');
+}else if (p1 === 'rock' && p2 === 'paper'){
+return ('Player 2 won!');
+}else if (p1 === 'paper' && p2 === 'scissors'){
+return ('Player 2 won!');
+}else if (p1 === 'scissors' || p2 === 'paper'){
+return ('Player 1 won!');
+}
+}
+
+// L1: Set Alarm
+function setAlarm(employed, vacation){
+return employed === true && vacation === false
+}
+
+// Can we divide it?
+function isDivideBy(number, a, b) {
+  return number % a === 0 && number % b === 0
+}
+
+// Student's Final Grade
+function finalGrade (exam, projects) {
+  if (exam > 90 || projects > 10){
+  return 100
+    } else if (exam > 75 && projects >= 5){
+    return 90
+      } else if (exam > 50 && projects >= 2){
+      return 75
+        } else {
+      return 0
     }
 }
 
-// Calculate Two People's Individual Ages
-function getAges(sum,difference){
- if (difference < 0||sum < 0) return null;
-   sum = sum / 2
-   difference /= 2
-   if (sum + difference < 0||sum - difference < 0) return null;
-   return [sum + difference, sum - difference]
-};
+// Convert boolean values to strings 'Yes' or 'No'.
+function boolToWord( bool ){
+  return bool ? 'Yes' : 'No';
+  }
 
-
+// Be Concise I - The Ternary Operator
+function describeAge(age) {
+return `You\'re a(n) ${age<=12?'kid':age<=17?'teenager':age<=64?'adult':'elderly'}`
+}
 
 ```
