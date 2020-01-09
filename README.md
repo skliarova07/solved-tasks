@@ -1,64 +1,51 @@
 
 ```javascript
-// isReallyNaN
-const isReallyNaN = (val) => {
-  return Number.isNaN(val);
-};
-
-//Filter the number
-var FilterString = function(value) {
-return parseInt(value.replace(/[a-z]/gi,''))
+// To square(root) or not to square(root)
+function squareOrSquareRoot(array) {
+  return array.map (el => {
+    if (Number.isInteger(Math.sqrt(el))){
+      return Math.sqrt(el);
+      }else{
+      return Math.pow(el, 2);
+    }
+  });  
 }
 
-//Is integer safe to use?
-function SafeInteger(n) {
-return Number.isSafeInteger(n)
+// You're a square!
+var isSquare = function(n){
+  let r = Math.sqrt(n);
+  return r === Math.floor(r); 
 }
 
-//Return Negative
-function makeNegative(num) {
-  return - Math.abs(num)
+// Find the next perfect square!
+function findNextSquare(sq) {
+return Math.sqrt(sq) % 1? -1: Math.pow(Math.sqrt(sq) + 1, 2);
 }
 
-//Opposite number
-function opposite(number) {
-  return (- number);
+//Beginner Series #4 Cockroach
+function cockroachSpeed(s) {
+ return Math.floor(s * (100000 / 3600))
 }
 
-//Invert values
-function invert(array) {
-let newArr = [];
-for (let i = 0; i < array.length; i++){
-  newArr.push(- array[i]);
-}
-   return newArr;
+// Price of Mangoes
+function mango(quantity, price){
+return (quantity - Math.floor(quantity / 3)) * price
 }
 
-//Closest elevator
-function elevator(left, right, call){
-  return Math.abs (call - left) < Math.abs(call - right) ? 'left': 'right';
+// Holiday VIII - Duty Free
+function dutyFree(normPrice, discount, hol){
+return   Math.floor(hol / (normPrice * discount / 100))
 }
 
-//BASIC: Making Six Toast.
-function sixToast(num) {
-   return num > 6 ? num - 6 : 6 - num;
+// All Star Code Challenge #22
+function toTime(seconds) {
+ let hour = Math.floor (seconds/ 3600);
+ let min = Math.floor((seconds - hour * 3600)/ 60);
+return `${hour} hour(s) and ${min} minute(s)`;
 }
 
-//Square Every Digit
-function squareDigits(num){
-    const digits = num.toString().split('')
-    const squaredDigits = digits.map(n => n * n)
-    const squaredNumber = squaredDigits.join('')
-    return +squaredNumber
-}
-
-//Squares sequence
-function squares(x, n) {
- let arr = [];
-  for(let i = 0; i < n; i++){
-    arr.push(x);
-    x*= x;
-  }
-  return arr;
+// Formatting decimal places #1
+function twoDecimalPlaces(number) {
+  return Math.trunc(number * 100) / 100
 }
 ```
