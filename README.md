@@ -1,51 +1,54 @@
 
 ```javascript
-// To square(root) or not to square(root)
-function squareOrSquareRoot(array) {
-  return array.map (el => {
-    if (Number.isInteger(Math.sqrt(el))){
-      return Math.sqrt(el);
-      }else{
-      return Math.pow(el, 2);
-    }
-  });  
+// Expressions Matter
+function expressionMatter(a, b, c) {
+  return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c))
 }
 
-// You're a square!
-var isSquare = function(n){
-  let r = Math.sqrt(n);
-  return r === Math.floor(r); 
+// Lario and Muigi Pipe Problem
+function pipeFix(numbers){
+let first = numbers [0];
+let last = numbers[numbers.length - 1];
+let arr = []
+  for (let i = first; i <= last; i++){
+    arr.push(i);
+    };
+  return arr;
 }
 
-// Find the next perfect square!
-function findNextSquare(sq) {
-return Math.sqrt(sq) % 1? -1: Math.pow(Math.sqrt(sq) + 1, 2);
+// Binary Addition
+function addBinary(a,b) {
+  return (a + b).toString(2)
 }
 
-//Beginner Series #4 Cockroach
-function cockroachSpeed(s) {
- return Math.floor(s * (100000 / 3600))
+// Convert to Binary
+function toBinary(n){
+  return +n.toString(2);
 }
 
-// Price of Mangoes
-function mango(quantity, price){
-return (quantity - Math.floor(quantity / 3)) * price
+// Calculate Price Excluding VAT
+//return price without vat
+function excludingVatPrice(price){
+  return price === null ? -1 : Number((price / 1.15).toFixed(2))
 }
 
-// Holiday VIII - Duty Free
-function dutyFree(normPrice, discount, hol){
-return   Math.floor(hol / (normPrice * discount / 100))
+// Bin to Decimal
+function binToDec(bin){
+ return parseInt(bin,2)
 }
 
-// All Star Code Challenge #22
-function toTime(seconds) {
- let hour = Math.floor (seconds/ 3600);
- let min = Math.floor((seconds - hour * 3600)/ 60);
-return `${hour} hour(s) and ${min} minute(s)`;
+// Hex to Decimal
+function hexToDec(hexString){
+  return parseInt(hexString, 16)
 }
 
-// Formatting decimal places #1
-function twoDecimalPlaces(number) {
-  return Math.trunc(number * 100) / 100
+// Parse nice int from char problem
+function getAge(inputString){
+return parseInt(inputString, 10); 
+}
+
+// Parse float
+function parseF(s) {
+  return (Number.isNaN(parseFloat(s)) ? null : parseFloat(s));
 }
 ```
