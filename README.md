@@ -1,54 +1,34 @@
 
 ```javascript
-// Expressions Matter
-function expressionMatter(a, b, c) {
-  return Math.max(a + b + c, a * b * c, (a + b) * c, a * (b + c))
+// Detect Pangram
+function isPangram(string){
+  let str = string.toLowerCase().replace(/[^a-z]/g, '');
+  let obj = {};
+  for (let el of str){
+    obj[el] = obj[el] ? obj[el]++ : 1;
+   }
+  let count = 0;
+  for (let i in obj){
+    if (obj[i] === 1) count++;
+    else return fals;
+   }
+  return count === 26;
+  }
+
+// Exclamation marks series #2: Remove all exclamation marks from the end of sentence
+function remove(s){
+  return s.replace(/!+$/, ''); 
 }
 
-// Lario and Muigi Pipe Problem
-function pipeFix(numbers){
-let first = numbers [0];
-let last = numbers[numbers.length - 1];
-let arr = []
-  for (let i = first; i <= last; i++){
-    arr.push(i);
-    };
-  return arr;
-}
-
-// Binary Addition
-function addBinary(a,b) {
-  return (a + b).toString(2)
-}
-
-// Convert to Binary
-function toBinary(n){
-  return +n.toString(2);
-}
-
-// Calculate Price Excluding VAT
-//return price without vat
-function excludingVatPrice(price){
-  return price === null ? -1 : Number((price / 1.15).toFixed(2))
-}
-
-// Bin to Decimal
-function binToDec(bin){
- return parseInt(bin,2)
-}
-
-// Hex to Decimal
-function hexToDec(hexString){
-  return parseInt(hexString, 16)
-}
-
-// Parse nice int from char problem
-function getAge(inputString){
-return parseInt(inputString, 10); 
-}
-
-// Parse float
-function parseF(s) {
-  return (Number.isNaN(parseFloat(s)) ? null : parseFloat(s));
+// Complementary DNA
+function DNAStrand(dna){
+  let res = '';
+  for(let x of dna){
+    if(x === 'A') res += 'T';
+    if(x === 'T') res += 'A';
+    if(x === 'C') res += 'G';
+    if(x === 'G') res += 'C';
+  }
+  return res;
 }
 ```
