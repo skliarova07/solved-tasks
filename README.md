@@ -1,74 +1,143 @@
 
 ```javascript
-// Numbers to Objects
-function numObj(s){
-let obj = {};
-let arr = [];
-for (let i = 0; i < s.length; i++){
-  obj[s[i]] = String.fromCharCode(s[i]);
-  console.log(s[i]);
-  console.log(obj[s[i]]);
-  s[i] += ''
-  let res = {}
-  res[s[i]] = obj[s[i]]
-  arr.push(res)
+// Filling an array (part 1)
+function arr(n){
+  var newArr = [];
+  for(var i = 0; i < n; i++){
+    newArr.push(i);
   }
-return arr  
+  return newArr;
 }
 
-//How many days are we represented in a foreign country?
-function daysRepresented(trips){
-let res = {};
- for(i = 0; i < trips.length; i++){
-   for(j = trips[i][0]; j <= trips[i][1]; j++) {
-     if(!res[j]){
-       res[j] = 1
-     }
+// Count the Monkeys!
+function monkeyCount(n) {
+let newArr = [];
+  for (let i = 1; i <= n; i++){
+    newArr.push(i);
+    }
+    return newArr;
+}
+
+//Sum Arrays
+// Sum Numbers
+sum = function (numbers) {
+  "use strict";
+  let s = 0;
+  for(let i = 0; i < numbers.length; i++) {
+    s += numbers[i];
+  }
+  return s;
+};
+
+//altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+String.prototype.toAlternatingCase = function () {
+  let newStr = '';
+  for (let i = 0; i < this.length; i++){
+    if (this[i].toUpperCase() === this[i]){newStr = newStr + this[i].toLowerCase();
+    } else {newStr = newStr + this[i].toUpperCase();}
+  } return newStr;
+}
+
+//sort array by last character
+function sortMe(arr){
+let a;
+for(let i = 0; i < arr.length-1; i++){
+  for(let j = i+1; j< arr.length; j++){
+    if(arr[i].toString().slice(-1)>arr[j].toString().slice(-1)){
+      a = arr[i]; arr[i] = arr[j]; arr[j]=a;
     }
   }
-  return Object.keys(res).length
+} return arr;
 }
 
-//Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages
-function countLanguages(list) {
-  let res = {};
-  for (i = 0; i < list.length; i++){
-    if(!res[list[i].language]){
-      res[list[i].language] = 1;
-    }else{
-      res[list[i].language] ++;
+//Converting Measures
+function convertRecipe(recipe){
+  let arr = recipe.split(' ');
+  let full;
+  for (let i = 1; i < arr.length; i++){
+    if (arr[i-1].includes('/')) {
+      let n = arr[i-1].split('/')[0]; 
+      let m = arr[i-1].split('/')[1];
+      full = +n/+m;
+    } else full = +arr[i-1];
+    if (arr[i] === 'tbsp') {
+      arr[i] = arr[i] + ` (${Math.ceil(full * 15)}g)`;
+      } else if (arr[i] === 'tsp') {
+      arr[i] = arr[i] + ` (${Math.ceil(full * 5)}g)`; 
+      }
+  }
+  return arr.join(' ');
+}
+
+//Convert string to camel case
+function toCamelCase(str){
+  let arr = str.split(/[^a-zA-Z]/g)
+  for(let i = 1; i < arr.length; i++){
+    arr[i]= arr[i][0].toUpperCase() + arr[i].slice(1);
+  }
+  return arr.join('')
+}
+
+//What is type of variable?
+function type(value) {
+  if(toString.call(value) == '[object Array]') return 'array';
+  if(toString.call(value) == '[object Date]') return 'date';
+  if(toString.call(value) == '[object Null]') return 'null';
+
+  else return typeof(value);
+}
+
+//A Needle in the Haystack
+function findNeedle(array) {
+for (let i=0; i<array.length; i++){
+  if (array[i] === 'needle')
+    return 'found the needle at position ' + i;
+  }
+}
+
+//Counting sheep...
+function countSheeps (arrayOfSheep) {
+    let sheepCounter = 0;
+    for( let i = 0; i < arrayOfSheep.length; i++) {
+      if(arrayOfSheep[i]=== true) {
+        sheepCounter++;
+      }
+    }
+    return sheepCounter;
+  }
+
+//Enumerable Magic #3 - Does My List Include This?
+function include(arr, item){
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === item) {
+      return true;
     }
   }
-  return res;
+  return false;
 }
 
-//Remove the minimum
-function removeSmallest(numbers) {
-  if (!numbers.length)
-    return [];
-  let inx = 0;  
-  const nums = Array.from(numbers, (x, i) => {  
-    if (x < numbers[inx])
-      inx = i;
-    return x;
-  });
-  nums.splice(inx, 1);
-  return nums;
+//Total amount of points
+function points(games) {
+  let count = 0;
+  games.forEach(item =>{
+    if(item[0] > item[2]) count += 3;
+    if(item[0] === item[2]) count += 1;
+  })
+  return count;
 }
 
-//Every possible sum of two digits
-function digits(num){
-  let numStr = num.toString();
-  let result = [];
-  for(let i = 0; i < numStr.length - 1; i++) {
-    for (let j = i + 1; j < numStr.length; j++) {
-      result.push( parseInt(numStr[i]) + parseInt(numStr[j]) );
+//Find the first non-consecutive number
+function firstNonConsecutive(arr) {
+  for (let i = 0; i < arr.length - 1; ++i) {
+    if (arr[i] + 1 !== arr[i + 1]) {
+      return arr[i + 1]
     }
   }
-  return result;
+  return null
 }
 
-//Is every value in the array an array?
-const arrCheck = value =>
-value.every(Array.isArray)
+//Difference of Volumes of Cuboids
+function findDifference(a, b) {
+  return Math.abs(a[0]*a[1]*a[2]-b[0]*b[1]*b[2]);
+}
 ```
