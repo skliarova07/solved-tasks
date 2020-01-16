@@ -1,143 +1,229 @@
 
 ```javascript
-// Filling an array (part 1)
-function arr(n){
-  var newArr = [];
-  for(var i = 0; i < n; i++){
-    newArr.push(i);
-  }
-  return newArr;
+// Square(n) Sum
+function squareSum(numbers){
+ let sum = 0;
+ for(let i= 0; i < numbers.length; i++){
+   sum = sum + numbers[i] ** 2
+ }
+ return sum
 }
 
-// Count the Monkeys!
-function monkeyCount(n) {
-let newArr = [];
-  for (let i = 1; i <= n; i++){
-    newArr.push(i);
+//How good are you really?
+function betterThanAverage(classPoints, yourPoints) {
+  let classAvg = 0;
+  for (let i = 0; i < classPoints.length; i++){
+    classAvg += classPoints[i]; 
+  }
+  classAvg = classAvg/classPoints.length; 
+  return yourPoints > classAvg;
+}
+
+//Sum of positive
+function positiveSum(arr) {
+  let sum = 0;
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i]> 0){
+    sum += arr[i]
     }
-    return newArr;
+ }
+  return sum
 }
 
-//Sum Arrays
-// Sum Numbers
-sum = function (numbers) {
-  "use strict";
-  let s = 0;
-  for(let i = 0; i < numbers.length; i++) {
-    s += numbers[i];
+//Count of positives / sum of negatives
+function countPositivesSumNegatives(input) {
+    if (input === null || input.length === 0)
+      return [];
+    let count = 0;
+    let sum = 0;
+    for (let i = 0; i < input.length; i++){
+      if (input[i] > 0){
+       count ++;
+      }else{
+        sum += input[i];
+        }
+    }
+    return [count, sum];
+}
+
+//Calculate average
+function find_average(array) {
+  let sum = 0;
+  for (i = 0; i < array.length; i++){
+    sum += array[i];
   }
-  return s;
+  return sum/array.length;
+}
+
+//Divide and Conquer
+function divCon(x){
+  let str = 0; 
+  let num = 0;
+  for (i = 0; i < x.length; i++) {
+    if (typeof x[i] === 'string') {
+      str += +x[i];
+    } else {
+      num += x[i];
+    }
+  }
+  return num - str;
+}
+
+//Sum of Odd Cubed Numbers
+function cubeOdd (arr) {
+  let sum = 0;
+  for (let num of arr)
+    if (num !== +num)
+      return;
+    else if (num % 2)
+      sum += num * num * num;
+  return sum;
+}
+
+//Odd or Even?
+function oddOrEven(array) {
+   let sum = 0;
+   for(i = 0; i< array.length; i++){
+     sum += array[i]
+     }
+     if(sum % 2 === 0){
+     return 'even'
+     }
+     return'odd'
+}
+
+//Find the smallest integer in the array
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+   return Math.min(... args); 
+  }
+}
+
+//Sum without highest and lowest number
+function sumArray(array) {
+  if(array == null || !array.length ) return 0;
+  array.sort((a, b) => a-b);
+  let sum = 0;
+  for(let i = 1; i < array.length-1; i++){
+  sum += array[i];
+  }
+  return sum;
+}
+
+//Find Maximum and Minimum Values of a List
+let min = function(list){  
+    return Math.min(...list);
+}
+let max = function(list){   
+    return Math.max(...list);
+}
+
+//Find the divisors!
+function divisors(integer) {
+  let arr = [];
+  for (let i = 2; i < integer; i++) { 
+    if (integer % i === 0){ 
+     arr.push(i); 
+    }
+  }
+  return (arr.length === 0) ? integer + ' is prime' : arr;
+}
+
+//Count by X
+function countBy(x, n) {
+  let arr = [];
+  for(i = 1; i <= n; i++){
+  arr.push(i * x);
+  }
+  return arr;
+}
+
+//Unfinished Loop - Bug Fixing #1
+function createArray(number){
+  let newArray = [];
+  for(let i = 1; i <= number; i++){
+    newArray.push(i);
+  }
+  return newArray;
+}
+
+//Generate range of integers
+function generateRange(min, max, step){
+let arr = [];
+  for (i = min; i <= max; i += step){
+  arr.push(i);
+  }
+  return arr;
+}
+
+//Pre-FizzBuzz Workout #1
+function preFizz(n) {
+let arr = [];
+  for (i= 1; i <= n; i++){
+  arr.push(i);
+  }
+  return arr;
+}
+
+//Training JS #10: loop statement --for
+function pickIt(arr){
+  let odd = [];
+  let even = [];
+  for(let i = 0; i < arr.length; i++){
+  if(arr[i] % 2 === 0){
+    even.push(arr[i])
+     }else{
+    odd.push(arr[i]);
+    }
+  }
+  return [odd,even];
+}
+
+//Powers of 2
+function powersOfTwo(n){
+  let arr = [];
+  for (let i = 0; i <= n; i++) {
+    arr.push(Math.pow(2, i));
+  }
+  return arr;
+}
+
+//Reversed sequence
+const reverseSeq = n => {
+let arr = [];
+  for(i = n; i > 0; i--){
+    arr.push(i)
+  }
+  return arr;
 };
 
-//altERnaTIng cAsE <=> ALTerNAtiNG CaSe
-String.prototype.toAlternatingCase = function () {
-  let newStr = '';
-  for (let i = 0; i < this.length; i++){
-    if (this[i].toUpperCase() === this[i]){newStr = newStr + this[i].toLowerCase();
-    } else {newStr = newStr + this[i].toUpperCase();}
-  } return newStr;
+//Training JS #4: Basic data types--Array
+function getLength(arr){
+  return arr.length;
+}
+function getFirst(arr){
+  return arr[0];
+}
+function getLast(arr){
+  return arr[arr.length-1];
+}
+function pushElement(arr){
+  arr.push(1);
+  return arr;
+}
+function popElement(arr){
+  arr.pop()
+  return arr;
 }
 
-//sort array by last character
-function sortMe(arr){
-let a;
-for(let i = 0; i < arr.length-1; i++){
-  for(let j = i+1; j< arr.length; j++){
-    if(arr[i].toString().slice(-1)>arr[j].toString().slice(-1)){
-      a = arr[i]; arr[i] = arr[j]; arr[j]=a;
-    }
-  }
-} return arr;
+//No Loops 2 - You only need one
+function check(a,x){
+return a.includes(x)
+};
+
+You only need one - Beginner
+function check(a, x) {
+  return a.includes(x)
 }
 
-//Converting Measures
-function convertRecipe(recipe){
-  let arr = recipe.split(' ');
-  let full;
-  for (let i = 1; i < arr.length; i++){
-    if (arr[i-1].includes('/')) {
-      let n = arr[i-1].split('/')[0]; 
-      let m = arr[i-1].split('/')[1];
-      full = +n/+m;
-    } else full = +arr[i-1];
-    if (arr[i] === 'tbsp') {
-      arr[i] = arr[i] + ` (${Math.ceil(full * 15)}g)`;
-      } else if (arr[i] === 'tsp') {
-      arr[i] = arr[i] + ` (${Math.ceil(full * 5)}g)`; 
-      }
-  }
-  return arr.join(' ');
-}
-
-//Convert string to camel case
-function toCamelCase(str){
-  let arr = str.split(/[^a-zA-Z]/g)
-  for(let i = 1; i < arr.length; i++){
-    arr[i]= arr[i][0].toUpperCase() + arr[i].slice(1);
-  }
-  return arr.join('')
-}
-
-//What is type of variable?
-function type(value) {
-  if(toString.call(value) == '[object Array]') return 'array';
-  if(toString.call(value) == '[object Date]') return 'date';
-  if(toString.call(value) == '[object Null]') return 'null';
-
-  else return typeof(value);
-}
-
-//A Needle in the Haystack
-function findNeedle(array) {
-for (let i=0; i<array.length; i++){
-  if (array[i] === 'needle')
-    return 'found the needle at position ' + i;
-  }
-}
-
-//Counting sheep...
-function countSheeps (arrayOfSheep) {
-    let sheepCounter = 0;
-    for( let i = 0; i < arrayOfSheep.length; i++) {
-      if(arrayOfSheep[i]=== true) {
-        sheepCounter++;
-      }
-    }
-    return sheepCounter;
-  }
-
-//Enumerable Magic #3 - Does My List Include This?
-function include(arr, item){
-  for (let i = 0; i <= arr.length; i++) {
-    if (arr[i] === item) {
-      return true;
-    }
-  }
-  return false;
-}
-
-//Total amount of points
-function points(games) {
-  let count = 0;
-  games.forEach(item =>{
-    if(item[0] > item[2]) count += 3;
-    if(item[0] === item[2]) count += 1;
-  })
-  return count;
-}
-
-//Find the first non-consecutive number
-function firstNonConsecutive(arr) {
-  for (let i = 0; i < arr.length - 1; ++i) {
-    if (arr[i] + 1 !== arr[i + 1]) {
-      return arr[i + 1]
-    }
-  }
-  return null
-}
-
-//Difference of Volumes of Cuboids
-function findDifference(a, b) {
-  return Math.abs(a[0]*a[1]*a[2]-b[0]*b[1]*b[2]);
-}
 ```
