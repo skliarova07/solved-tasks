@@ -1,86 +1,44 @@
 
 ```javascript
-// Find Duplicates
-function duplicates(arr) {
-  return arr.filter(function(v, i) {return arr.indexOf(v) != i && arr.lastIndexOf(v) == i;});
+// Enumerable Magic #1 - True for All?
+function all( arr, fun ) {
+ return arr.every(fun);
 }
 
-// Train to remove duplicates from an array with filter()
-function unique(arr) {
-  return arr.filter((x, i) => arr.indexOf(x) === i);
+//Grasshopper - Array Mean
+var findAverage = function (nums) {
+  return (nums.reduce ((acc, curr) => acc + curr))/ nums.length;
 }
 
-//Santa's Naughty List
-const findChildren = (santasList, children) => {
-  const arr = [];
-  for (const item of santasList) {
-    for (const child of children) {
-      if (item === child && !arr.includes(item)) {
-        arr.push(item)
-      }
-    }
-  }
-  return arr.sort();
+//SpeedCode #2 - Array Madness
+const arrayMadness = (a, b) =>
+  a.reduce((total, num) => total + num ** 2, 0) >
+  b.reduce((total, num) => total + num ** 3, 0)
+
+//Beginner - Reduce but Grow
+function grow(x){
+return x.reduce((acc, curr) => acc * curr, 1)
 }
 
-//Convert number to reversed array of digits
-function digitize(n) {
-  return (n+'').split('').reverse().map(n => +n);
+//Array plus array
+function arrayPlusArray(arr1, arr2) {
+  return arr1.concat(arr2).reduce((arr1,arr2)=>arr1+arr2)
 }
 
-//My head is at the wrong end!
-function fixTheMeerkat(arr) {
-	 return arr.reverse();
+//Beginner - Lost Without a Map
+function maps(x){
+return x.map(el => el * 2);
 }
 
-//Two Oldest Ages
-function twoOldestAges(ages) { 
-   ages.sort(function(a, b) {
-  return a - b;
-});
-  let oldest = ages.pop()
-   let secondOldest = ages.pop() 
-   return [secondOldest,oldest]
+//Enumerable Magic #25 - Take the First N Elements
+function take(arr, n) {
+  return arr.splice(0, n);
 }
 
-//Sum of two lowest positive integers
-function sumTwoSmallestNumbers(numbers) {  
-  numbers.sort(function(a,b){
-  return a - b;
-  })
-  numbers.reverse()
-  let lowNum1 = numbers.pop()
-  let lowNum2 = numbers.pop()
-  return lowNum1 + lowNum2
-}
-
-//Sum of differences in array
-function sumOfDifferences(arr) {
-  arr.sort((a, b) => a - b);
-  let sum = 0;
-  for(let i = arr.length - 1; i > 0; i--) {
-    sum += arr[i] - arr[i - 1];
-  }
-  return sum;
-}
-
-//Sentence Smash
-function smash (words) {
-   return words.join(' ') 
-};
-
-//String Templates - Bug Fixing #5
-function buildString(...template){
-  return `I like ${template.join(', ') + '!'}`;
-}
-
-//Printing Array elements with Comma delimiters
-function printArray(array){
-  return array.join(',')
-}
-
-//CSV representation of array
-function toCsvText(array) {
-   return array.join('\n')
-}
+//Remove First and Last Character Part Two
+const array = arr =>
+  arr
+    .split(',')
+    .slice(1, -1)
+    .join(' ') || null
 ```
