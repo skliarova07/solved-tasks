@@ -1,44 +1,91 @@
 
 ```javascript
-// Enumerable Magic #1 - True for All?
-function all( arr, fun ) {
- return arr.every(fun);
+// Jenny's secret message
+function greet(name){
+  if(name === 'Johnny'){
+    return 'Hello, my love!'
+  } return `Hello, ${name}!`;
 }
 
-//Grasshopper - Array Mean
-var findAverage = function (nums) {
-  return (nums.reduce ((acc, curr) => acc + curr))/ nums.length;
+//Template Strings
+var TempleStrings = function(obj, feature) {
+  return `${obj} are ${feature}`;
 }
 
-//SpeedCode #2 - Array Madness
-const arrayMadness = (a, b) =>
-  a.reduce((total, num) => total + num ** 2, 0) >
-  b.reduce((total, num) => total + num ** 3, 0)
-
-//Beginner - Reduce but Grow
-function grow(x){
-return x.reduce((acc, curr) => acc * curr, 1)
+//Returning Strings
+function greet(name){
+  return `Hello, ${name} how are you doing today?`;
 }
 
-//Array plus array
-function arrayPlusArray(arr1, arr2) {
-  return arr1.concat(arr2).reduce((arr1,arr2)=>arr1+arr2)
+//Grasshopper - Combine strings
+function combineNames(firstName,lastName){
+  return firstName + ' ' + lastName;
 }
 
-//Beginner - Lost Without a Map
-function maps(x){
-return x.map(el => el * 2);
+//Grasshopper - Debug sayHello
+function sayHello(name) {
+  return `Hello, ${name}`;
 }
 
-//Enumerable Magic #25 - Take the First N Elements
-function take(arr, n) {
-  return arr.splice(0, n);
+//If you can't sleep, just count sheep!!
+var countSheep = function (num){
+  let str = '';
+  for(let i = 1; i <= num; i++) {
+  str+= `${i} sheep...`;
+  }
+  return str;
 }
 
-//Remove First and Last Character Part Two
-const array = arr =>
-  arr
-    .split(',')
-    .slice(1, -1)
-    .join(' ') || null
+//get character from ASCII Value
+function getChar(c){
+  return String.fromCodePoint(c);
+}
+
+//Regex validate PIN code
+function validatePIN(pin) { 
+    let value = false; 
+    if (/^[0-9]{4}$/.test(pin) === true || /^[0-9]{6}$/.test(pin) === true) { 
+        value = true; 
+    }
+    return value; 
+}
+ 
+//Is this my tail?
+function correctTail(body, tail){
+  return (body[body.length - 1] === tail)? true: false;
+  }
+
+//Abbreviate a Two Word Name
+function abbrevName(name){
+  var nam = name.split(' ');
+  return nam[0].charAt(0).toUpperCase()+'.' + nam[1].charAt(0).toUpperCase();
+}
+
+//Numbers to Letters
+function switcher(x){
+  const obj={1:'z',2:'y',3:'x',4:'w',5:'v',6:'u',7:'t',8:'s',9:'r',10:'q',
+11:'p',12:'o',13:'n',14:'m',15:'l',16:'k',17:'j',18:'i',19:'h',20:'g',
+21:'f',22:'e',23:'d',24:'c',25:'b',26:'a',27:'!',28:'?',29:' '}
+  return x.map(v=>obj[v*1]).join('')
+}
+
+//5 without numbers !!
+function unusualFive() {
+  let str = 'Hello';
+return(str.length);
+}
+
+//Unique In Order
+function uniqueInOrder(it){
+  let result = [];
+  let last = '';
+  
+  for(let i = 0; i < it.length; i++){
+    if(it[i] !== last){
+      last = it[i]
+      result.push(last);
+    }
+  }
+  return result;
+}
 ```
