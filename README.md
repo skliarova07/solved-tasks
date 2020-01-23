@@ -1,91 +1,101 @@
 
 ```javascript
-// Jenny's secret message
-function greet(name){
-  if(name === 'Johnny'){
-    return 'Hello, my love!'
-  } return `Hello, ${name}!`;
+// Regex count lowercase letters
+function lowercaseCount(str){
+  let newStr = str.replace(/[^a-z]/g, '');
+  return newStr.length;
 }
 
-//Template Strings
-var TempleStrings = function(obj, feature) {
-  return `${obj} are ${feature}`;
+//Double Char
+function doubleChar(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    newStr += str.charAt(i) + str.charAt(i);
+  }
+  return newStr;
+};
+
+//Remove First and Last Character
+const removeChar = str =>
+  str
+    .split('')
+    .slice(1, str.length - 1)
+    .join('')
+
+
+//Triple Trouble
+function tripleTrouble(one, two, three) {
+  let result = '';
+  one = one.split('');
+  two = two.split('');
+  three = three.split('');
+  
+  for (let i = 0; i < one.length; i++) {
+    result += one[i] + two[i] + three[i];
+  }
+  return result;
 }
 
-//Returning Strings
-function greet(name){
-  return `Hello, ${name} how are you doing today?`;
+//Remove String Spaces
+function noSpace(x){
+  return x.split(' ').join('');
 }
 
-//Grasshopper - Combine strings
-function combineNames(firstName,lastName){
-  return firstName + ' ' + lastName;
+//Spacify
+function spacify(str) {
+  return str.split('').join(' ')
 }
 
-//Grasshopper - Debug sayHello
-function sayHello(name) {
-  return `Hello, ${name}`;
+//Reversed Strings
+function solution(str) {
+return str.split("").reverse().join("").split(" ").reverse().join(" ");
 }
 
-//If you can't sleep, just count sheep!!
-var countSheep = function (num){
+//Is it a palindrome?
+const isPalindrome = (x) => {
+  return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
+}
+
+//The Wide-Mouthed frog!
+const mouthSize = animal => (/alligator/gi.test(animal) ? 'small' : 'wide')
+
+//Find the capitals
+var capitals = function (word) {
+  let a = word.split('')
+	let arr = [];
+  for(let i = 0; i < word.length; i++){
+  if (a[i] === a[i].toUpperCase()){
+    arr.push(i)
+    }
+  }
+  return arr
+};
+
+//Mumbling
+function accum(s) {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}
+
+//Thinking & Testing : Something capitalized
+function testit(s){
   let str = '';
-  for(let i = 1; i <= num; i++) {
-  str+= `${i} sheep...`;
+  for (i = 0; i < s.length; i++) {
+     if (s[i + 1] === ' ' || i === s.length - 1) {
+        str += s[i].toUpperCase();
+     } else {
+        str += s[i]
+     }
   }
   return str;
 }
 
-//get character from ASCII Value
-function getChar(c){
-  return String.fromCodePoint(c);
+// MakeUpperCase
+function makeUpperCase(str) {
+  return str.toUpperCase();
 }
 
-//Regex validate PIN code
-function validatePIN(pin) { 
-    let value = false; 
-    if (/^[0-9]{4}$/.test(pin) === true || /^[0-9]{6}$/.test(pin) === true) { 
-        value = true; 
-    }
-    return value; 
-}
- 
-//Is this my tail?
-function correctTail(body, tail){
-  return (body[body.length - 1] === tail)? true: false;
-  }
-
-//Abbreviate a Two Word Name
-function abbrevName(name){
-  var nam = name.split(' ');
-  return nam[0].charAt(0).toUpperCase()+'.' + nam[1].charAt(0).toUpperCase();
-}
-
-//Numbers to Letters
-function switcher(x){
-  const obj={1:'z',2:'y',3:'x',4:'w',5:'v',6:'u',7:'t',8:'s',9:'r',10:'q',
-11:'p',12:'o',13:'n',14:'m',15:'l',16:'k',17:'j',18:'i',19:'h',20:'g',
-21:'f',22:'e',23:'d',24:'c',25:'b',26:'a',27:'!',28:'?',29:' '}
-  return x.map(v=>obj[v*1]).join('')
-}
-
-//5 without numbers !!
-function unusualFive() {
-  let str = 'Hello';
-return(str.length);
-}
-
-//Unique In Order
-function uniqueInOrder(it){
-  let result = [];
-  let last = '';
-  
-  for(let i = 0; i < it.length; i++){
-    if(it[i] !== last){
-      last = it[i]
-      result.push(last);
-    }
-  }
-  return result;
+//Capitalization and Mutability
+function capitalizeWord(word) {
+  return word[0].toUpperCase() + word.slice(1);
 }
 ```
