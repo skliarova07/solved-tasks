@@ -1,101 +1,42 @@
 
 ```javascript
-// Regex count lowercase letters
-function lowercaseCount(str){
-  let newStr = str.replace(/[^a-z]/g, '');
-  return newStr.length;
-}
-
-//Double Char
-function doubleChar(str) {
-  let newStr = '';
-  for (let i = 0; i < str.length; i++) {
-    newStr += str.charAt(i) + str.charAt(i);
+// repeatIt
+var repeatIt = function(str, n) {
+return (typeof str !== 'string') ? 'Not a string' : str.repeat(n);
   }
-  return newStr;
-};
 
-//Remove First and Last Character
-const removeChar = str =>
-  str
-    .split('')
-    .slice(1, str.length - 1)
-    .join('')
-
-
-//Triple Trouble
-function tripleTrouble(one, two, three) {
-  let result = '';
-  one = one.split('');
-  two = two.split('');
-  three = three.split('');
-  
-  for (let i = 0; i < one.length; i++) {
-    result += one[i] + two[i] + three[i];
-  }
-  return result;
+//String repeat
+function repeatStr (n, s) {
+  return s.repeat(n);
 }
 
-//Remove String Spaces
-function noSpace(x){
-  return x.split(' ').join('');
-}
-
-//Spacify
-function spacify(str) {
-  return str.split('').join(' ')
-}
-
-//Reversed Strings
-function solution(str) {
-return str.split("").reverse().join("").split(" ").reverse().join(" ");
-}
-
-//Is it a palindrome?
-const isPalindrome = (x) => {
-  return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
-}
-
-//The Wide-Mouthed frog!
-const mouthSize = animal => (/alligator/gi.test(animal) ? 'small' : 'wide')
-
-//Find the capitals
-var capitals = function (word) {
-  let a = word.split('')
-	let arr = [];
-  for(let i = 0; i < word.length; i++){
-  if (a[i] === a[i].toUpperCase()){
-    arr.push(i)
+//Don't give me five!
+function dontGiveMeFive(start, end){
+let count = 0;
+for (let i = start; i <= end; i++){
+  if (i.toString().includes("5") === false) {
+      count++;
     }
   }
-  return arr
-};
-
-//Mumbling
-function accum(s) {
-  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+  return count;
 }
 
-//Thinking & Testing : Something capitalized
-function testit(s){
-  let str = '';
-  for (i = 0; i < s.length; i++) {
-     if (s[i + 1] === ' ' || i === s.length - 1) {
-        str += s[i].toUpperCase();
-     } else {
-        str += s[i]
-     }
-  }
-  return str;
+//Do you speak "English"?
+function spEng(sentence){
+return (sentence.toLowerCase().includes('english'))? true : false;
 }
 
-// MakeUpperCase
-function makeUpperCase(str) {
-  return str.toUpperCase();
+//Find the position!
+function position(letter){
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  return 'Position of alphabet: ' + (alphabet.indexOf(letter) + 1);
 }
 
-//Capitalization and Mutability
-function capitalizeWord(word) {
-  return word[0].toUpperCase() + word.slice(1);
+//validate code with simple regex
+const validateCode = code => /^[1-3]/g.test(code)
+
+//String ends with?
+function solution(str, ending){
+  return str.endsWith(ending);
 }
 ```
