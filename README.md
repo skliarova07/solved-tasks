@@ -1,49 +1,70 @@
 
 ```javascript
-// Credit Card Mask
-// return masked string
-function maskify(cc) {
-  return '#'.repeat(cc.slice(0, -4).length) + cc.slice(-4);
+// Reversed Words
+function reverseWords(str){
+  return str.split(" ").reverse().join(" ");
 }
 
-//Tail Swap
-function tailSwap(arr) {
-  const [aa, ab] = arr[0].split(":")
-  const [ba, bb] = arr[1].split(":")
-  return [`${aa}:${bb}`, `${ba}:${ab}`]
+//Name Shuffler
+function nameShuffler(str){
+  return str.split(' ').reverse().join(' ');
 }
 
-//Vowel remover
-function shortcut(string){
-return string.replace(/[aeiou]/g, '')
-}
-
-//DNA to RNA Conversion
-function DNAtoRNA(dna) {
-  return dna.replace(/t/gi, 'U')
+//Squash the bugs
+function findLongest(str) {
+  let spl = str.split(" "),
+      longest = 0;
+  
+  for (var i in spl) {
+    if (spl[i].length > longest) {
+      longest = spl[i].length;
+    }
   }
 
-//Correct the mistakes of the character recognition software
-function correct(string){
-	return string.replace(/5/g, 'S').replace(/0/g, 'O').replace(/1/g, 'I')
+  return longest;
 }
 
-//Get number from string
-function getNumberFromString(s) {
-  return +s.replace(/\D/g, '');
+//Reversing Words in a String
+function reverse(string){
+  return string.split(' ').reverse().join(' ');
 }
 
-//Fake Binary
-function fakeBin(x){
-  let result = '';
-  for(let i = 0; i < x.length; i++){
-    x[i] < 5 ? result += 0 : result += 1;
+//Convert a string to an array
+function stringToArray(string){
+	return string.split(' ')
+}
+
+//Descending Order
+function descendingOrder(n){
+    return parseInt((n+'').split('').sort().reverse().join(''))
+}
+
+//Highest and Lowest
+function highAndLow(numbers){
+  num=numbers.split(' ');
+  let max = parseInt(num[0]);
+  let min = parseInt(num[0]);
+  for (let i = 0; i < num.length; i++) {
+    if(parseInt(num[i]) > max){
+      max = parseInt(num[i]);
+    }
   }
-  return result;
+  for (let i = 0; i < num.length; i++) {
+    if(parseInt(num[i]) < min){
+      min = parseInt(num[i]);
+    } 
+ }
+ return (max + ' ' + min);
 }
 
-//FIXME: Replace all dots
-var replaceDots = function(str) {
-  return str.replace(/[.]/g, '-');
+//Can Santa save Christmas?
+function determineTime(durations){
+   let sec = 0;
+   let str = [];
+   for (let i = 0; i < durations.length; i++) {
+     str = durations[i].split(":");
+     sec += +str[0] * 3600 + +str [1] * 60 + +str[2];
+    }
+    return sec/3600 <=24 ? true : false;
 }
 ```
